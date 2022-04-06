@@ -1,5 +1,5 @@
 public class Laskukone {
-    int tulos;
+    double tulos;
 
     public Laskukone() {
         nollaa();
@@ -10,26 +10,22 @@ public class Laskukone {
     }
 
     public void vahennaLuku(int luku) {
-        tulos += luku;
+        tulos -= luku;
     }
 
-    public void kerroLuvulla(int luku) {
-        for (int i=1; i<luku; i++) {
-            lisaaLuku(luku);
-        }
+    public void kerroLuvulla(int luku, int luku2) {
+        tulos = luku*luku2;
     }
 
-    public void korotaPotenssiin(int luku) {
-        for (int i=1; i<=luku; i++) {
-            kerroLuvulla(luku);
-        }
+    public void korotaPotenssiin(int luku, int potenssi) {
+       tulos = Math.pow(luku,potenssi);
     }
 
-    public int annaTulos() {
+    public double annaTulos() {
         return tulos;
     }
 
     public void nollaa() {
-        tulos = 1;
+        tulos = 0;
     }
 }
